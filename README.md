@@ -24,6 +24,7 @@ This project uses the JavaScript `fetch` API to dynamically read the local `/son
 
 ## 📂 Folder Structure
 
+```text
 Wave-Player/
 ├── asserts/             # UI elements and media assets
 │   ├── svgs/            # Play, pause, volume, hamburger icons, etc.
@@ -35,6 +36,7 @@ Wave-Player/
 ├── index.html           # Main application entry point
 ├── Style.css            # Stylesheet
 └── script.js            # Core application logic
+```
 
 To experience the fully functional player, it must be run on a local development server.
 
