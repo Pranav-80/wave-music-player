@@ -1,5 +1,5 @@
 let currSong = new Audio();;
-let albumspath = './songs/'
+let albumspath = 'http://127.0.0.1:3000/Web%20Devlopment%20-%20CodeWithHarry/Wave-Player/songs/'
 const play_icon = document.getElementById("play");
 // fetch all songs
 async function getSongs(folder) {
@@ -131,7 +131,6 @@ async function main() {
   let folder;
   if (card) {
     card.forEach((card) => {
-
       card.addEventListener("click", async (e) => {
         folder = albumspath + e.currentTarget.querySelector(".playlistName").dataset.album;
         let loading = await loadSongs(folder);
@@ -145,8 +144,11 @@ async function main() {
             playMusic(name, folder)
           });
         });
+
+
+        console.log("Songs in playlist: ", songs_names);
         document.getElementById("prev").addEventListener("click", () => {
-          let current_song_name = document.getElementsByClassName("song_info")[0].innerHTML;
+          let current_song_name = document.getElementsByClassName("song_info")[0].innerText;
           let index = songs_names.indexOf(current_song_name);
           if (index > 0) {
             playMusic(songs_names[index - 1], folder);
@@ -155,9 +157,9 @@ async function main() {
         });
 
         document.getElementById("next").addEventListener("click", () => {
-          let current_song_name = document.getElementsByClassName("song_info")[0].innerHTML;
+          let current_song_name = document.getElementsByClassName("song_info")[0].innerText;
           let index = songs_names.indexOf(current_song_name);
-          if (index < songs_names.length - 1) {
+          if (index < songs_names.length - 1 && index != -1) {
             playMusic(songs_names[index + 1], folder);
             document.title = songs_names[index + 1];
           }
@@ -169,7 +171,6 @@ async function main() {
   else {
     folder = albumspath + 'misceleneous/';
   }
-  console.log(folder);
 
 
 
