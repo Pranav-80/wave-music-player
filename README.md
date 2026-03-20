@@ -22,6 +22,20 @@ https://github.com/user-attachments/assets/bea42bfb-b796-483d-bdb8-97f29d55bc20
 ## ⚠️ Important Note on Execution (CORS & Directory Fetching)
 This project uses the JavaScript `fetch` API to dynamically read the local `/songs` directory to build the library. Because modern web browsers and cloud hosting platforms (like GitHub Pages) block directory listing for security reasons, **this player will not load the music library if hosted statically on the web.**
 
+## 📂 Folder Structure
+
+Wave-Player/
+├── asserts/             # UI elements and media assets
+│   ├── svgs/            # Play, pause, volume, hamburger icons, etc.
+│   └── Cover_pages/     # Album art and playlist cover images
+├── songs/               # Music library categorized by folders
+│   ├── album_name/
+│   │   ├── info.json    # Album metadata (art path, artist, name)
+│   │   └── track.mp3    # Audio files
+├── index.html           # Main application entry point
+├── Style.css            # Stylesheet
+└── script.js            # Core application logic
+
 To experience the fully functional player, it must be run on a local development server.
 
 ## 🚀 How to Run Locally
